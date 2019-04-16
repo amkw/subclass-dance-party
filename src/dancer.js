@@ -29,10 +29,12 @@ Dancer.prototype.setPosition = function(top, left) {
 Dancer.prototype.lineUpDancers = function(){
   // Move dancers to same height in middle of page
   this.$node.animate({'top': $('body').height()/2});
+  this.top = $('body').height() / 2;
 
   // Space dancers evenly across width of page
   for (var i = 0; i < window.dancers.length; i++) {
     window.dancers[i].$node.animate({ 'left': $('body').width() / window.dancers.length*i});
+    this.left = $('body').width() / window.dancers.length * i;
   }
 };
 

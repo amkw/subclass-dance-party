@@ -1,5 +1,10 @@
 body, html{
   height:100%;
+  background: url(images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 body{
   margin: 0px;
@@ -52,7 +57,26 @@ body, a:link, a:visited, a:active{
   width: 75px;
   position:absolute;
 }
-
+.lucca{
+  height: 85px;
+  width: 85px;
+  position:absolute;
+}
+.ayla{
+  height: 80px;
+  width: 70px;
+  position:absolute;
+}
+.magus{
+  height: 100px;
+  width: 100px;
+  position:absolute;
+}
+.robo{
+  height: 100px;
+  width: 100px;
+  position:absolute;
+}
 .flip{
   transform: rotate(180deg);
 }
