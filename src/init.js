@@ -23,11 +23,46 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $('.lineUpDancers').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++){
+      window.dancers[i].lineUpDancers();
+    }
+  });
+
+  // $('body').on('mouseover', '.blinky', function (event) {
+  //   var distance = null;
+  //   var top = this.top;
+  //   var left = this.left;
+  //   console.log(this);
+  //   for (var i = 0; i < window.dancers.length; i++) {
+  //     // if () {
+  //     //   top = window.dancers[i].top;
+  //     //   left = window.dancers[i].left;
+  //     // }
+  //   }
+  // });
+
+  // $('body').on('mouseover', 'img', function (event) {
+  //   $('img').css({"height" : "50%", "width" : "50%"});
+  // });
+
+  $('body').on('mouseover', '.chrono', function (event) {
+    $('.chrono').toggleClass('flip');
+  });
+
+  $('body').on('mouseout', '.chrono', function (event) {
+    $('.chrono').toggleClass('flip');
   });
 });
+
+
+
 

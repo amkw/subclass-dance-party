@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Object Dance Party</title>
+    <title>Millennial Fair Party</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
+    <script src="src/frogDancer.js"></script>
+    <script src="src/chronoDancer.js"></script>
+    <script src="src/marleDancer.js"></script>
   </head>
   <body>
     <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>    </div>
+      <span class="title">Millennial Fair Party</span>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">Blinky</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MarleDancer">Marle</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="FrogDancer">Frog</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="ChronoDancer">Chrono</a>
+      <a href="#" class="lineUpDancers">Line Up</a>
+      <audio controls loop>
+        <source src="millennialfair.mp3" type="audio/ogg" class="lineUpDancers">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
     <script src="src/init.js"></script>
   </body>
 </html>

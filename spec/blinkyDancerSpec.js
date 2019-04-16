@@ -32,3 +32,74 @@ describe('blinkyDancer', function() {
     });
   });
 });
+
+
+describe('frogDancer', function () {
+
+  var frogDancer, clock;
+  var timeBetweenSteps = 100;
+
+  beforeEach(function () {
+    clock = sinon.useFakeTimers();
+    frogDancer = new FrogDancer(10, 20, timeBetweenSteps);
+  });
+
+  it('should have a jQuery $node object', function () {
+    expect(frogDancer.$node).to.be.an.instanceof(jQuery);
+  });
+
+  it('should have a step function that makes its node blink', function () {
+    sinon.spy(frogDancer.$node, 'toggle');
+    frogDancer.step();
+    expect(frogDancer.$node.toggle.called).to.be.true;
+  });
+
+  describe('dance', function () {
+    it('should call step at least once per second', function () {
+      sinon.spy(frogDancer, 'step');
+      expect(frogDancer.step.callCount).to.be.equal(0);
+      clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
+      clock.tick(timeBetweenSteps);
+
+      expect(frogDancer.step.callCount).to.be.equal(1);
+
+      clock.tick(timeBetweenSteps);
+      expect(frogDancer.step.callCount).to.be.equal(2);
+    });
+  });
+});
+
+describe('frogDancer', function () {
+
+  var frogDancer, clock;
+  var timeBetweenSteps = 100;
+
+  beforeEach(function () {
+    clock = sinon.useFakeTimers();
+    chronoDancer = new ChronoDancer(10, 20, timeBetweenSteps);
+  });
+
+  it('should have a jQuery $node object', function () {
+    expect(chronoDancer.$node).to.be.an.instanceof(jQuery);
+  });
+
+  it('should have a step function that makes its node blink', function () {
+    sinon.spy(chronoDancer.$node, 'toggle');
+    chronoDancer.step();
+    expect(chronoDancer.$node.toggle.called).to.be.true;
+  });
+
+  describe('dance', function () {
+    it('should call step at least once per second', function () {
+      sinon.spy(chronoDancer, 'step');
+      expect(chronoDancer.step.callCount).to.be.equal(0);
+      clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
+      clock.tick(timeBetweenSteps);
+
+      expect(chronoDancer.step.callCount).to.be.equal(1);
+
+      clock.tick(timeBetweenSteps);
+      expect(chronoDancer.step.callCount).to.be.equal(2);
+    });
+  });
+});
