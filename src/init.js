@@ -37,6 +37,13 @@ $(document).ready(function() {
     }
   });
 
+  $('.breakOutDancers').on('click', function (event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].breakOut();
+    }
+  });
+
+
   // $('body').on('mouseover', '.blinky', function (event) {
   //   var distance = null;
   //   var top = this.top;
@@ -50,9 +57,13 @@ $(document).ready(function() {
   //   }
   // });
 
-  // $('body').on('mouseover', 'img', function (event) {
-  //   $('img').css({"height" : "50%", "width" : "50%"});
-  // });
+  $('body').on('mouseover', '.frog', function (event) {
+    $('.frog').css({"height" : "200px", "width" : "200px"});
+  });
+
+  $('body').on('mouseout', '.frog', function (event) {
+    $('.frog').css({ "height": "100px", "width": " 100px" });
+  });
 
   $('body').on('mouseover', '.chrono', function (event) {
     $('.chrono').toggleClass('flip');

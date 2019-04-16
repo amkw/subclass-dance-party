@@ -17,7 +17,8 @@ body, a:link, a:visited, a:active{
   float:right;
 }
 
-.lineUpDancers{
+.lineUpDancers,
+.breakOutDancers{
   padding:11px 12px;
   float:left;
 }
@@ -47,15 +48,10 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .marle{
-  height: 80px;
-  width: 80px;
+  height: 75px;
+  width: 75px;
   position:absolute;
 }
-/* .chrono{
-  height: 100px;
-  width: 100px;
-  position:absolute;
-} */
 
 .flip{
   transform: rotate(180deg);

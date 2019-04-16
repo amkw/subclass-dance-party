@@ -27,5 +27,18 @@ Dancer.prototype.setPosition = function(top, left) {
 };
 
 Dancer.prototype.lineUpDancers = function(){
-  this.$node.css('top', $('body').height()/2);
+  // Move dancers to same height in middle of page
+  this.$node.animate({'top': $('body').height()/2});
+
+  // Space dancers evenly across width of page
+  for (var i = 0; i < window.dancers.length; i++) {
+    window.dancers[i].$node.animate({ 'left': $('body').width() / window.dancers.length*i});
+  }
 };
+
+Dancer.prototype.breakOut = function() {
+  this.top = $("body").height() * Math.random();
+  this.left = $("body").width() * Math.random();
+  this.$node.animate({ 'top': this.top, 'left': this.left});
+};
+
